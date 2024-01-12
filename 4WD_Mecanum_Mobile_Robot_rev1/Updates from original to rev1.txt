@@ -1,0 +1,23 @@
+4WD Mecanum Mobile Robot Rev 1:
+
+Changes:
+*Added 74HC595 Shift Register
+*Added PCA9685 Servo Driver
+*Lowered pin usage on NodeMCU ESP32S
+
+
+74HC595 8-bit Shift Register
+ - IN1-IN4 are now connected to the Shift Register instead of straight to the MCU
+ - IN1-IN4 are now based on the bits of the Shift Register
+	Ex. digitalWrite(IN1, HIGH); ----> updateShiftRegister(b00000010);
+	    digitalWrite(IN2, LOW);
+ - This lowered pin usage from 8 pins to 3 pins for both motor drivers.
+ - Lowered pin usage added PWM ability to the robot. 
+	*PWM pins (ENA,ENB) are connected straigt to MCU
+
+
+PCA9685 16-bit PWM Servo Driver
+ - Also used to lessen used pins for servos
+ - Can control up to 16 servos using 2 pins
+ - 2 pins are SDA and SCL or I2C protocol
+ - Gives servo ability to have accurate minimum and maximum 0-180 degree movement.
