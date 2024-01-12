@@ -4,7 +4,7 @@ Changes:
 *Added 74HC595 Shift Register
 *Added PCA9685 Servo Driver
 *Lowered pin usage on NodeMCU ESP32S
-
+*Added PWM functionality
 
 74HC595 8-bit Shift Register
  - IN1-IN4 are now connected to the Shift Register instead of straight to the MCU
